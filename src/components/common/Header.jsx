@@ -6,6 +6,7 @@ import Link from 'next/link';
 // import WmdsLogo from '../../../public/falcon-courier-logo.png'
 // import wmdslogo from '../../../public/webinoxmedia-logo.png'
 import WhatsAppButton from './WhatsAppButton';
+import Button from './Button';
 
 
 
@@ -78,9 +79,19 @@ function MobileNav({open, setOpen}) {
                 <WhatsAppButton />
             </div>
 
-            <button className="uppercase mt-2 border px-4 py-1 ml-6 rounded-md font-medium tracking-wide bg-[#070077] text-white hover:bg-blue-600 hover:text-white transition duration-200 shadow-lg" onClick={() => router.push("https://goo.gl/maps/koo5FUkvREdNxi8n8")}>
+            <div className="ml-10 uppercase -mt-4">    
+                <Button 
+                    title={"Locate Us"}
+                    onClick={() => router.push("https://goo.gl/maps/7p4NWp3QN9a6VM3RA")}
+                />
+            </div>
+
+            {/* <button 
+                className="uppercase mt-2 border px-4 py-1 ml-6 rounded-md font-medium tracking-wide bg-[#070077] text-white hover:bg-blue-600 hover:text-white transition duration-200 shadow-lg" 
+                onClick={() => router.push("https://goo.gl/maps/7p4NWp3QN9a6VM3RA")}
+            >
                 Locate Us
-            </button>
+            </button> */}
         </div>
     )
 }
@@ -93,13 +104,13 @@ function Header() {
 
     return (
         <header>
-            <nav className="fixed top-0 z-[1000] flex items-center justify-between w-full mt-4 lg:mt-2 px-2 h-[64px] lg:h-[81px] lg:px-52 shadow-md bg-white">
+            <nav className="fixed top-0 z-[1000] flex items-center justify-between w-full px-2 h-[90px] lg:h-[90px] lg:px-52 shadow-md bg-white">
                 <Image 
                     src={"/24Aryavrat-logo.png"} 
                     alt="" 
-                    width={162} 
+                    width={171} 
                     height={69} 
-                    className="cursor-pointer filter drop-shadow-md mb-2 lg:mb-0" 
+                    className="cursor-pointer filter drop-shadow-md mt-4 mb-2 lg:mb-0" 
                     onClick={() => router.push("/")}
                 />
 
