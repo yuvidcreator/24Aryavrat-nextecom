@@ -1,4 +1,4 @@
-export const BACKEND_API_URL = process.env.BACKEND_API
+
 export const DOMAIN_NAME = "https://www.24aryavrat.com"
 export const APP_NAME = "24 Aryavrat Organics"
 export const Business = {

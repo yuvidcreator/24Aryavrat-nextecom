@@ -1,7 +1,9 @@
+import { useRef } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { FaHome, FaEnvelopeOpenText } from 'react-icons/fa'
+import { FaHome, FaCartPlus } from 'react-icons/fa'
 import { FiPackage } from 'react-icons/fi'
+import { AiFillCloseCircle } from 'react-icons/ai';
 import WhatsAppButton from './WhatsAppButton'
 
 const links = [
@@ -20,17 +22,30 @@ const links = [
 			<FiPackage className="text-2xl" />
 		),
 	},
-	{
-		label: 'Contact',
-		href: '/contact',
-		icon: (
-			<FaEnvelopeOpenText className="text-2xl" />
-		),
-	},
+	// {
+	// 	label: 'Wishlist',
+	// 	href: '/wishlist',
+	// 	icon: (
+	// 		<FaCartPlus className="text-2xl" />
+	// 	),
+	// },
 ]
 
 const MobileBottomNav = () => {
-    const router = useRouter()
+    const router = useRouter();
+	const ref = useRef();
+
+	const toggleCart = () => {
+        console.log("Clicked");
+        if (ref.current.classList.contains('translate-x-full')) {
+            ref.current.classList.remove('translate-x-full')
+            ref.current.classList.add('translate-x-0')
+        } else if (ref.current.classList.contains('translate-x-0')) {
+            ref.current.classList.remove('translate-x-0')
+            ref.current.classList.add('translate-x-full')
+        }
+    }
+
     return (
         <div  className="sm:hidden absolute">
             <nav className="fixed bottom-0 w-full border-t bg-zinc-100 pb-safe dark:border-zinc-800 dark:bg-zinc-900">
@@ -52,7 +67,28 @@ const MobileBottomNav = () => {
 						</Link>
 					))}
 
+					<div ref={ref} className="cart-sidebar absolute top-0 right-0 bg-gray-100 p-10 transform transition-transform translate-x-full">
+						<h2 className="text-xl font-semibold mt-8">This is my Cart</h2>
+						<span onClick={toggleCart} className="absolute top-8 right-5 text-xl">
+							<AiFillCloseCircle />
+						</span>
+						<ol>
+							<li>
+								<span>Desi Ghee - 1</span>
+							</li>
+						</ol>
+					</div>
+					
+					<div onClick={toggleCart} className="flex h-full w-full flex-col items-center justify-center space-y-1 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50">
+						<FaCartPlus className="text-2xl" />
+						<span className="text-xs text-zinc-600 dark:text-gray-300">
+							Cart
+						</span>
+					</div>
+
 					<WhatsAppButton />
+
+					
 				</div>
 			</nav>
         </div>
