@@ -1,7 +1,7 @@
 {
-    "name": "24 Aryavrat Organics",
-    "short_name": "24 Aryavrat",
-    "description": "24 Aryavrat Organics - Online Ecommerce Store",  
+    "name": "24Aryavrat Organics",
+    "short_name": "24Aryavrat",
+    "description": "24Aryavrat Organics - Online Ecommerce Store",  
     "icons": [
         {
             "src": "/icons/48x48.png",
@@ -41,8 +41,9 @@
             "purpose": "maskable"
         }
     ],
-    "theme_color": "#023020",
+    "theme_color": "#ffffff",
     "background_color": "#ffffff",
     "start_url": "/",
-    "display": "standalone"
+    "display": "standalone",
+    "orientation": "portrait"
 }
