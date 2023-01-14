@@ -3,10 +3,10 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import { useRouter } from 'next/router'
 import Hero from '../components/Home/Hero'
-import Gallery from '../components/Home/Gallery'
+import TopCaterogy from '../components/Home/TopCaterogy'
 import Featured from '../components/Home/Featured'
 import CallToAction from '../components/Home/CallToAction'
-import FAQ from '../components/Home/FAQ'
+import HomeContact from '../components/Home/HomeContact'
 import ProductsCard from '../components/Home/ProductsCard'
 // import Button from '../components/common/Button'
 
@@ -38,11 +38,11 @@ export default function Home() {
 
       <div className="mt-28 mb-16">
         <Hero />
-        <Gallery />
-        <Featured />
+        <TopCaterogy />
         <ProductsCard />
-        <CallToAction />
-        <FAQ />
+        <Featured />
+        {/* <CallToAction /> */}
+        <HomeContact />
       </div>
     </>
   )

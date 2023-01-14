@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 // import DynamicTextForPages from '../../components/common/DynamicTextForPages'
 import ProductComponent from '../../components/Products/ProductComponent'
 
-const Product = () => {
+const Product = ({addToCart}) => {
     const router = useRouter();
     const { slug } = router.query;
 
@@ -14,7 +14,7 @@ const Product = () => {
                 <DynamicTextForPages text={`Your Query slug: /${slug}/`} />
             </div> */}
             
-            <ProductComponent slug={slug} />
+            <ProductComponent slug={slug} addToCart={addToCart} />
         </>
     )
 }
