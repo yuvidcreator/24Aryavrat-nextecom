@@ -47,3 +47,6 @@ next-env.d.ts
 **/public/sw**
 **/public/precache.*.js
 **/public/fallback-**
+
+# third part 
+./mmt.json
