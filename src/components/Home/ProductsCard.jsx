@@ -5,73 +5,76 @@ import { DOMAIN_URL } from "../../utils"
 const PRODUCT_URL = `${DOMAIN_URL}/products`
 const CATERGORY_URL = `${DOMAIN_URL}/category`
 
-const items = [
-    {
-        id: 1,
-        link: "https://dummyimage.com/600x600/",
-        category: "PANCHAGAVYA",
-        title: "Desi Ghee",
-        sellingPrice: 1199,
-        regularPrice: 1599,
-        quantity: [
-            {
-                id: 1,
-                value: 250
-            },
-            {
-                id: 2,
-                value: 500
-            },
-        ],
-        rating: 4,
-        productSlug: "desi-ghee",
-        categorySlug: "panchagavya"
-    },
-    {
-        id: 2,
-        link: "https://dummyimage.com/600x600/",
-        category: "PANCHAGAVYA",
-        title: "Desi Ghee",
-        sellingPrice: 1199,
-        regularPrice: 1599,
-        quantity: [
-            {
-                id: 1,
-                value: 250
-            },
-            {
-                id: 2,
-                value: 500
-            },
-        ],
-        rating: 5,
-        productSlug: "desi-ghee",
-        categorySlug: "panchagavya"
-    },
-    {
-        id: 3,
-        link: "https://dummyimage.com/600x600/",
-        category: "PANCHAGAVYA",
-        title: "Desi Ghee",
-        sellingPrice: 1199,
-        regularPrice: 1599,
-        quantity: [
-            {
-                id: 1,
-                value: 250
-            },
-            {
-                id: 2,
-                value: 500
-            },
-        ],
-        rating: 3,
-        productSlug: "desi-ghee",
-        categorySlug: "panchagavya"
-    }
-]
+
 
 const ProductsCard = () => {
+
+    const items = [
+        {
+            id: 1,
+            link: "https://dummyimage.com/600x600/",
+            category: "PANCHAGAVYA",
+            title: "Desi Ghee",
+            sellingPrice: 1199,
+            regularPrice: 1599,
+            quantity: [
+                {
+                    id: 1,
+                    value: 250
+                },
+                {
+                    id: 2,
+                    value: 500
+                },
+            ],
+            rating: 4,
+            productSlug: "desi-ghee",
+            categorySlug: "panchagavya"
+        },
+        {
+            id: 2,
+            link: "https://dummyimage.com/600x600/",
+            category: "PANCHAGAVYA",
+            title: "Desi Ghee",
+            sellingPrice: 1199,
+            regularPrice: 1599,
+            quantity: [
+                {
+                    id: 1,
+                    value: 250
+                },
+                {
+                    id: 2,
+                    value: 500
+                },
+            ],
+            rating: 5,
+            productSlug: "desi-ghee",
+            categorySlug: "panchagavya"
+        },
+        {
+            id: 3,
+            link: "https://dummyimage.com/600x600/",
+            category: "PANCHAGAVYA",
+            title: "Desi Ghee",
+            sellingPrice: 1199,
+            regularPrice: 1599,
+            quantity: [
+                {
+                    id: 1,
+                    value: 250
+                },
+                {
+                    id: 2,
+                    value: 500
+                },
+            ],
+            rating: 3,
+            productSlug: "desi-ghee",
+            categorySlug: "panchagavya"
+        }
+    ]
+
     return (
         <section className="text-gray-600 body-font">
             <div className="container px-5 py-24 mx-auto">
