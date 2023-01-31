@@ -1,7 +1,7 @@
 // import React from 'react';
-import Link from 'next/link';
-import SeoMetas from './common/SeoMetas';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
+import SeoMetas from './common/SeoComponents/SeoMetas';
 
 
 

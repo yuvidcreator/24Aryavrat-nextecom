@@ -1,4 +1,4 @@
-import { APP_NAME, BackLinks, Business, DOMAIN_NAME } from '../../utils/Web'
+import { APP_NAME, BackLinks, Business, DOMAIN_NAME } from '@/utils/BizSettings'
 
 
 const BodySchemaMarkup = () => {
@@ -11,7 +11,7 @@ const BodySchemaMarkup = () => {
                     "@context": "https://schema.org",
                     "@type": "${Business.bizType}",
                     "name": "${APP_NAME}",
-                    "image": "${DOMAIN_NAME}/images/logo.png",
+                    "image": "${DOMAIN_NAME}/gau-srushti-logo.png",
                     "@id": "${DOMAIN_NAME}/${Business.bizNature}",
                     "url": "${DOMAIN_NAME}",
                     "telephone": "${Business.contactNo}",

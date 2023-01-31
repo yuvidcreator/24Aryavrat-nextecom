@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FaHome, FaHeart } from 'react-icons/fa'
 import { FiPackage } from 'react-icons/fi'
-import WhatsAppButton from './WhatsAppButton'
+import WhatsAppButton from '../WhatsAppButton'
 
 const links = [
 	{

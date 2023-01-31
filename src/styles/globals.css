@@ -16,7 +16,7 @@ body {
     }
 
     .span {
-        @apply relative text-lg font-medium before:bg-[#3d3d3d] before:rounded-bl before:-bottom-1.5 before:h-0.5 before:inset-x-0 before:absolute before:transform before:origin-left before:scale-x-0 before:transition-all before:duration-200 group-hover:before:scale-x-100;
+        @apply relative text-lg font-medium before:bg-[#1b1818] before:rounded-bl before:-bottom-1.5 before:h-0.5 before:inset-x-0 before:absolute before:transform before:origin-left before:scale-x-0 before:transition-all before:duration-200 group-hover:before:scale-x-100;
     }
 
     .spinner-container {

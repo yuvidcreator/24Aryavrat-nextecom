@@ -1,96 +1,50 @@
-// import ComingSoon from '../components/ComingSoon'
-import { useEffect, useState } from 'react';
-import '../styles/globals.css'
-import Layout from '../components/common/Layout'
+import '@/styles/globals.css'
+import { useState, useEffect } from 'react';
+import { Provider } from "react-redux";
+import { QueryClientProvider, QueryClient, Hydrate } from 'react-query';
+import Layout from '@/components/common/Layout/Layout'
+import store from '@/redux/app/store';
+import CommingSoonNew from '@/components/ComingSoon';
 import { Toaster } from "react-hot-toast";
-// import { Provider } from 'react-redux'
-// import { store } from '../redux/store'
+import Head from 'next/head';
+import { DOMAIN_NAME } from '@/utils/BizSettings';
+
+
+const queryClient = new QueryClient()
 
 
 export default function App({ Component, pageProps }) {
-  const [ cart, setCart ] = useState({});
-  const [ subTotal, setSubTotal] = useState(0);
+  
+  const [showChild, setShowChild] = useState(false);
 
-  useEffect(()=>{
-    console.log("I'm from _app.js");
-    try {
-      if (localStorage.getItem("cart")) {
-        setCart(JSON.parse(localStorage.getItem("cart")));
-      }
-    } catch (error) {
-      console.error(error);
-      localStorage.clear();
-    };
+  useEffect(() => {
+    setShowChild(true);
   }, []);
 
-  const saveCart = (myCart) => {
-    localStorage.setItem("cart", JSON.stringify(myCart));
-    let subt = 0;
-    let keys = Object.keys(myCart);
-    console.log(keys);
-    for(let i=0; i<keys.length; i++){
-      subt += myCart[keys[i]]["price"] * myCart[keys[i]]["qty"];
-    };
-    setSubTotal(subt);
-  };
+  if (!showChild) {
+    return null;
+  }
 
-  const addToCart = (itemCode, qty, name, price, size, variant) => {
-    // console.log(cart);
-    let newCart = cart;
-    // console.log(itemCode, qty, name, price, size, variant);
-    
-    if (itemCode in cart) {
-      newCart[itemCode].qty = cart[itemCode].qty + qty;
-    } else {
-      newCart[itemCode] = {qty: 1, name, price, size, variant};
-    }
-    // console.log(newCart);
-    setCart(newCart);
-    saveCart(newCart);
-  };
-
-  const removeFromCart = (itemCode, qty, name, price, size, variant) => {
-    let newCart = JSON.parse(JSON.stringify(cart));
-
-    if (itemCode in cart) {
-      newCart[itemCode].qty = cart[itemCode].qty - qty;
-    }
-
-    if (newCart[itemCode]["qty"] <= 0) {
-      delete newCart[itemCode]
-    }
-
-    setCart(newCart);
-    saveCart(newCart);
-  };
-
-  const clearCart = () => {
-    setCart({});
-    saveCart({});
-  };
-
-
-
-  return (
-    // <Provider store={store}>
-        <Layout
-          cart={cart}
-          addToCart={addToCart}
-          removeFromCart={removeFromCart}
-          clearCart={clearCart}
-          subTotal={subTotal}
-        >
-          <Component 
-            cart={cart}
-            addToCart={addToCart}
-            removeFromCart={removeFromCart}
-            clearCart={clearCart}
-            subTotal={subTotal}
-            {...pageProps} 
-          />
-          <Toaster />
-        </Layout>
-        // <ComingSoon />
-    // </Provider>
-  )
+  if (typeof window === 'undefined') {
+    return <></>;
+  } else { 
+    return (
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={pageProps.dehydratedState}>
+          {/* <Provider store={store}>
+            <Layout>
+                <Head>
+                  <meta name='viewport' content='minimum-scale=1,  width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover' />
+                  <link rel="preconnect" href={DOMAIN_NAME} />
+                  <link rel="dns-prefetch" href={DOMAIN_NAME} />
+                </Head>
+                <Component {...pageProps} />
+              <Toaster />
+            </Layout>
+          </Provider> */}
+        <CommingSoonNew />
+        </Hydrate>
+      </QueryClientProvider>
+    )
+  }
 }

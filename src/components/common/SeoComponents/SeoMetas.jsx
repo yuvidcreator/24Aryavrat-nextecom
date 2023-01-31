@@ -1,6 +1,6 @@
+import React from 'react'
 import Head from 'next/head';
-import React, { useState, useEffect } from 'react'
-import { Business, DOMAIN_NAME } from '../../utils/Web'
+import { Business, DOMAIN_NAME } from '@/utils/BizSettings'
 
 
 const SeoMetas = (props) => {
@@ -41,7 +41,7 @@ const SeoMetas = (props) => {
                 "@type": "Webpage",
                 "headline": "${props?.title}",
                 "@id": "${DOMAIN_NAME}/${Business.bizNature}",
-                "thumbnailUrl": "${DOMAIN_NAME}/images/logo.png",
+                "thumbnailUrl": "${DOMAIN_NAME}/gau-srushti-logo.png",
                 "dateCreated": "${props?.publishedAt}",
                 "name": "${props?.title}",
                 "description": "${props.description}",

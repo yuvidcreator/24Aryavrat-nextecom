@@ -15,14 +15,14 @@ const Footer = () => {
                             <div className="flex items-center border w-auto rounded-lg px-4 py-2 mx-2">
                                 <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" className="w-7 md:w-8" />
                                 <div className="text-left ml-3">
-                                    <p className='text-xs text-gray-200'>Launching Soon on </p>
+                                    <p className='text-xs text-gray-200'>Launching Soon </p>
                                     <p className="text-sm md:text-base"> </p>
                                 </div>
                             </div>
                             <div className="flex items-center border w-auto rounded-lg px-4 py-2 mx-2">
                                 <img src="https://cdn-icons-png.flaticon.com/512/888/888841.png" className="w-7 md:w-8" />
                                 <div className="text-left ml-3">
-                                    <p className='text-xs text-gray-200'>Launching Soon on </p>
+                                    <p className='text-xs text-gray-200'>Launching Soon </p>
                                     <p className="text-sm md:text-base"> </p>
                                 </div>
                             </div>

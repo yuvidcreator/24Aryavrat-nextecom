@@ -4,7 +4,7 @@ import GradientText from "@/components/common/GradientText"
 
 
 
-const CheckoutPage = () => {
+const PaymentPage = () => {
     return (
         <>
             {/* <div className="flex justify-center text-center items-center min-h-screen">
@@ -15,4 +15,4 @@ const CheckoutPage = () => {
     )
 }
 
-export default CheckoutPage
+export default PaymentPage

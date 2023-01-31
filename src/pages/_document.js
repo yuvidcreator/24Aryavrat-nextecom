@@ -1,8 +1,8 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import AnalyticsScripts from '../components/common/AnalyticsScripts'
-import BodySchemaMarkup from '../components/common/BodySchemaMarkup'
-import { APP_NAME, DOMAIN_NAME, Business } from '../utils/Web'
-import { GTM_ID } from '../utils/Gtm'
+import AnalyticsScripts from '@/components/common/SeoComponents/AnalyticsScripts'
+import BodySchemaMarkup from '@/components/common/SeoComponents/BodySchemaMarkup'
+import { DOMAIN_URL, GTM_ID } from '@/utils'
+import { APP_NAME, Business, DOMAIN_NAME } from '@/utils/BizSettings'
 
 export default function Document() {
   return (
