@@ -31,7 +31,7 @@ export default function App({ Component, pageProps }) {
     return (
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
-          {/* <Provider store={store}>
+          <Provider store={store}>
             <Layout>
                 <Head>
                   <meta name='viewport' content='minimum-scale=1,  width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover' />
@@ -41,8 +41,8 @@ export default function App({ Component, pageProps }) {
                 <Component {...pageProps} />
               <Toaster />
             </Layout>
-          </Provider> */}
-        <CommingSoonNew />
+          </Provider>
+        {/* <CommingSoonNew /> */}
         </Hydrate>
       </QueryClientProvider>
     )
